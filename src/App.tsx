@@ -12,6 +12,7 @@ import React from 'react'
 import { Redirect, Route } from 'react-router-dom'
 import HomePage from './pages/HomePage'
 import SettingsPage from './pages/SettingsPage'
+import EntryPage from './pages/EntryPage'
 
 import { home as homeIcon, settings as settingsIcon } from 'ionicons/icons'
 
@@ -27,6 +28,9 @@ const App: React.FC = () => {
             </Route>
             <Route exact path={'/settings'}>
               <SettingsPage />
+            </Route>
+            <Route exact path={'/entries/:id'}>
+              <EntryPage />
             </Route>
             <Redirect exact path='/' to='/home' />
           </IonRouterOutlet>
