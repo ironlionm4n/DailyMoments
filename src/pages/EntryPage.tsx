@@ -1,12 +1,9 @@
 import {
-  IonCard,
+  IonBackButton,
+  IonButtons,
   IonContent,
   IonHeader,
-  IonItem,
-  IonItemGroup,
-  IonList,
   IonPage,
-  IonText,
   IonTitle,
   IonToolbar
 } from '@ionic/react'
@@ -28,8 +25,11 @@ const EntryPage: React.FC = () => {
     <IonPage>
       <IonHeader>
         <IonToolbar>
-          <IonTitle>EntryPage</IonTitle>
+          <IonButtons slot='start'>
+            <IonBackButton />
+          </IonButtons>
         </IonToolbar>
+          <IonTitle>EntryPage</IonTitle>
         <IonTitle>Entry {entry.title}</IonTitle>
       </IonHeader>
       <IonContent className='ion-padding'>{entry.description}</IonContent>

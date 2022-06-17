@@ -24,7 +24,7 @@ const HomePage: React.FC = () => {
         <IonList>
           {entries.map(entry => {
             return (
-              <IonItem button key={entry.id} routerLink={`/entries/${entry.id}`}>
+              <IonItem button key={entry.id} routerLink={`/my/entries/${entry.id}`}>
                 <IonText>{entry.title}</IonText>
                 <IonText>{entry.id}</IonText>
                 <IonText>{entry.description}</IonText>
