@@ -15,9 +15,11 @@ interface LoginProps {
 }
 
 const LoginPage: React.FC<LoginProps> = ({ onLogin, loggedIn }) => {
+  
   if(loggedIn) {
     return <Redirect to="/my/entries" />
   }
+
   return (
     <IonPage>
       <IonHeader>

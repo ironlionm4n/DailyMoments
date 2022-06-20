@@ -14,7 +14,16 @@ import EntryPage from './pages/EntryPage'
 
 import { home as homeIcon, settings as settingsIcon } from 'ionicons/icons'
 
-const AppTabs: React.FC = () => {
+interface Props {
+  loggedIn: boolean
+}
+
+const AppTabs: React.FC<Props> = ({ loggedIn }) => {
+  if (!loggedIn) {
+    return <Redirect to='/login' />
+  }
+
+
   return (
     // Must have only 1 IonApp component
     <IonTabs>
@@ -28,7 +37,6 @@ const AppTabs: React.FC = () => {
         <Route exact path={'/my/entries/:id'}>
           <EntryPage />
         </Route>
-        <Redirect exact path='/' to='/my/entries' />
       </IonRouterOutlet>
       <IonTabBar slot='bottom'>
         <IonTabButton tab='home' href='/my/entries'>
